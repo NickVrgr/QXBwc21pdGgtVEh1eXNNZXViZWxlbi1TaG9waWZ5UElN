@@ -1,0 +1,6 @@
+UPDATE vrgr_vargar.users
+  SET session_id = {{crypto.randomUUID()}}
+		 ,session_expiration_date = {{moment().add(2, 'hours').valueOf()}}
+		 ,last_loggedin_date = {{moment()}}
+  WHERE id = {{ this.params.id }}
+	RETURNING session_id;

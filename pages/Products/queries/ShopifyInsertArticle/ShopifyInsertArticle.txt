@@ -1,0 +1,7 @@
+{{
+ {
+	  "settings": GetSettings.data[0],
+		"products": data_table.selectedRows,
+		"tags":Input_Tags.inputText
+ }
+}}

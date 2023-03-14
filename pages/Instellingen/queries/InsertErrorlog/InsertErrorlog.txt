@@ -1,0 +1,9 @@
+INSERT INTO  "vrgr_barendrechtelektra".errorlog
+  (message, created_by, page, stored_values)
+VALUES
+  (
+		{{ this.params.message }},
+    {{ GetLoggedInUser.data[0].user_email }},
+		{{ appsmith.URL.fullPath }},
+		{{ appsmith.store }}
+  );

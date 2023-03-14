@@ -1,0 +1,43 @@
+{
+  "pages": [
+    {
+      "id": "Authenticatie",
+      "isDefault": true
+    },
+    {
+      "id": "Overzicht",
+      "isDefault": false
+    },
+    {
+      "id": "Products",
+      "isDefault": false
+    },
+    {
+      "id": "Settings",
+      "isDefault": false
+    },
+    {
+      "id": "Admin - Gebruikers",
+      "isDefault": false
+    },
+    {
+      "id": "Admin - Overzicht",
+      "isDefault": false
+    },
+    {
+      "id": "Instellingen",
+      "isDefault": false
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "color": "#F3F1C7",
+  "icon": "laptop",
+  "unpublishedCustomJSLibs": [],
+  "publishedCustomJSLibs": [],
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "isManualUpdate": false,
+  "deleted": false
+}

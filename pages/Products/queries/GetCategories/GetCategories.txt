@@ -1,0 +1,2 @@
+SELECT DISTINCT details ->> 'Product type' AS "label", details ->> 'Product type' as value  FROM "vrgr_vargar".products
+where details ->> 'Product type' is not null;

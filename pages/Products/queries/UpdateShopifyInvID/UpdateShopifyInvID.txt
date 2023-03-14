@@ -1,0 +1,3 @@
+UPDATE "vrgr_vargar".products
+set variants_inv_ids =  variants_inv_ids || '["{{this.params.inv_ids}}"]'::jsonb
+where id = {{Table2.triggeredRow.id}}

@@ -1,0 +1,2 @@
+DELETE FROM vrgr_vargar."products"
+  WHERE "id" = {{data_table.triggeredRow.id}};

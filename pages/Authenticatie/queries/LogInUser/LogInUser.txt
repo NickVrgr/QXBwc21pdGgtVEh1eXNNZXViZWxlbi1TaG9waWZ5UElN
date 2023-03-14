@@ -1,0 +1,4 @@
+SELECT id
+  FROM vrgr_vargar.users
+ WHERE user_email = {{Input1.inputText}}
+   AND password = crypt({{Input2.inputText}}, password);

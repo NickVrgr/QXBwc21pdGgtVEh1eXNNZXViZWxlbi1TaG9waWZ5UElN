@@ -1,0 +1,7 @@
+INSERT INTO vrgr_vargar.admin_settings
+  (admin_user, created_by)
+VALUES
+  (
+    {{ Input_Email.inputText }},
+    {{ GetLoggedInUser.data[0].user_email }}
+  );

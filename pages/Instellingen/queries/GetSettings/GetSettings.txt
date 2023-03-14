@@ -1,0 +1,2 @@
+SELECT * FROM vrgr_vargar.admin_settings
+order by id desc;

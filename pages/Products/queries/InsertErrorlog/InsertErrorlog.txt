@@ -1,0 +1,8 @@
+INSERT INTO  "vrgr_vargar".errorlog
+  (code,message, created_by)
+VALUES
+  (
+		{{ ShopifyInsertArticle.data.code}},
+    {{ ShopifyInsertArticle.data.message }},
+    {{ appsmith.user.email }}
+  );

@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "JS_PIM",
+    "pageId": "Overzicht",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Overzicht_JS_PIM",
+  "deleted": false,
+  "gitSyncId": "63e35807ad94196f572dd542_640aae5f903737588890dcba"
+}

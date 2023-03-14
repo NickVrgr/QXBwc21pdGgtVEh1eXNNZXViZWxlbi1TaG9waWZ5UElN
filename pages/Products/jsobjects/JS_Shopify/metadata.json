@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "JS_Shopify",
+    "pageId": "Products",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Products_JS_Shopify",
+  "deleted": false,
+  "gitSyncId": "63e35807ad94196f572dd542_63e56ce6c3731e7323203fca"
+}
