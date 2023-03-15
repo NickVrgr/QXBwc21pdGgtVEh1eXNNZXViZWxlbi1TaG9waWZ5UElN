@@ -1,0 +1,2 @@
+DELETE FROM vrgr_thuysmeubelen."users"
+  WHERE "id" = {{this.params.id}};
