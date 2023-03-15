@@ -259,6 +259,9 @@
                         },
                         {
                           "key": "primaryColumns.variant_id.computedValue"
+                        },
+                        {
+                          "key": "primaryColumns.variants_inv_ids.computedValue"
                         }
                       ],
                       "leftColumn": 0,
@@ -317,6 +320,7 @@
                         "shopify_id",
                         "shopify_inv_id",
                         "variant_id",
+                        "variants_inv_ids",
                         "customColumn1"
                       ],
                       "dynamicPropertyPathList": [],
@@ -627,6 +631,25 @@
                           "isDerived": false,
                           "label": "variant_id",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variant_id))}}",
+                          "cellBackground": ""
+                        },
+                        "variants_inv_ids": {
+                          "index": 14,
+                          "width": 150,
+                          "id": "variants_inv_ids",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "variants_inv_ids",
+                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variants_inv_ids))}}",
                           "cellBackground": ""
                         }
                       },
@@ -4345,6 +4368,9 @@
                                 },
                                 {
                                   "key": "primaryColumns.variant_id.computedValue"
+                                },
+                                {
+                                  "key": "primaryColumns.variants_inv_ids.computedValue"
                                 }
                               ],
                               "leftColumn": 0,
@@ -4383,7 +4409,7 @@
                               },
                               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                               "originalBottomRow": 43,
-                              "columnUpdatedAt": 1678654190572,
+                              "columnUpdatedAt": 1678763695289,
                               "primaryColumnId": "itemcode",
                               "defaultSelectedRowIndices": "",
                               "widgetName": "Table2",
@@ -4403,7 +4429,8 @@
                                 "external_id",
                                 "shopify_inv_id",
                                 "customColumn1",
-                                "variant_id"
+                                "variant_id",
+                                "variants_inv_ids"
                               ],
                               "dynamicPropertyPathList": [
                                 {
@@ -4870,6 +4897,35 @@
                                   "sticky": "",
                                   "validation": {},
                                   "cellBackground": ""
+                                },
+                                "variants_inv_ids": {
+                                  "allowCellWrapping": false,
+                                  "index": 14,
+                                  "width": 150,
+                                  "originalId": "variants_inv_ids",
+                                  "id": "variants_inv_ids",
+                                  "alias": "variants_inv_ids",
+                                  "horizontalAlignment": "LEFT",
+                                  "verticalAlignment": "CENTER",
+                                  "columnType": "text",
+                                  "textColor": "",
+                                  "textSize": "0.875rem",
+                                  "fontStyle": "",
+                                  "enableFilter": true,
+                                  "enableSort": true,
+                                  "isVisible": true,
+                                  "isDisabled": false,
+                                  "isCellEditable": false,
+                                  "isEditable": false,
+                                  "isCellVisible": true,
+                                  "isDerived": false,
+                                  "label": "variants_inv_ids",
+                                  "isSaveVisible": true,
+                                  "isDiscardVisible": true,
+                                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"variants_inv_ids\"]))}}",
+                                  "sticky": "",
+                                  "validation": {},
+                                  "cellBackground": ""
                                 }
                               },
                               "onRowSelected": "",
@@ -4965,7 +5021,7 @@
                       "originalTopRow": 7,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 294,
+                      "originalBottomRow": 46,
                       "minDynamicHeight": 15
                     },
                     {
