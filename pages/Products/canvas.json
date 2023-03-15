@@ -613,6 +613,7 @@
                           "label": "shopify_inv_id",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.shopify_inv_id))}}",
                           "cellBackground": ""
+<<<<<<< HEAD
                         },
                         "variant_id": {
                           "index": 13,
@@ -651,6 +652,8 @@
                           "label": "variants_inv_ids",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variants_inv_ids))}}",
                           "cellBackground": ""
+=======
+>>>>>>> origin/staging
                         }
                       },
                       "key": "zba5qel0au",
