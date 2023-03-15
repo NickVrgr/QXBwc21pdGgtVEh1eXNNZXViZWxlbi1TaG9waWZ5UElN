@@ -258,10 +258,10 @@
                           "key": "primaryColumns.shopify_inv_id.computedValue"
                         },
                         {
-                          "key": "primaryColumns.variant_id.computedValue"
+                          "key": "primaryColumns.variants_inv_ids.computedValue"
                         },
                         {
-                          "key": "primaryColumns.variants_inv_ids.computedValue"
+                          "key": "primaryColumns.variant_id.computedValue"
                         }
                       ],
                       "leftColumn": 0,
@@ -301,7 +301,8 @@
                         "title": 191,
                         "stock": 241,
                         "body_html": 169,
-                        "omschrijving": 341
+                        "omschrijving": 341,
+                        "variants_inv_ids": 175
                       },
                       "widgetName": "data_table",
                       "defaultPageSize": 0,
@@ -319,8 +320,8 @@
                         "external_id",
                         "shopify_id",
                         "shopify_inv_id",
-                        "variant_id",
                         "variants_inv_ids",
+                        "variant_id",
                         "customColumn1"
                       ],
                       "dynamicPropertyPathList": [],
@@ -613,29 +614,9 @@
                           "label": "shopify_inv_id",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.shopify_inv_id))}}",
                           "cellBackground": ""
-<<<<<<< HEAD
-                        },
-                        "variant_id": {
-                          "index": 13,
-                          "width": 150,
-                          "id": "variant_id",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "text",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "variant_id",
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variant_id))}}",
-                          "cellBackground": ""
                         },
                         "variants_inv_ids": {
-                          "index": 14,
+                          "index": 13,
                           "width": 150,
                           "id": "variants_inv_ids",
                           "horizontalAlignment": "LEFT",
@@ -652,8 +633,25 @@
                           "label": "variants_inv_ids",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variants_inv_ids))}}",
                           "cellBackground": ""
-=======
->>>>>>> origin/staging
+                        },
+                        "variant_id": {
+                          "index": 14,
+                          "width": 150,
+                          "id": "variant_id",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "variant_id",
+                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variant_id))}}",
+                          "cellBackground": ""
                         }
                       },
                       "key": "zba5qel0au",
@@ -1667,12 +1665,12 @@
                 "notification"
               ],
               "topRow": 21,
-              "bottomRow": 48,
+              "bottomRow": 47,
               "parentRowSpace": 10,
               "type": "MODAL_WIDGET",
               "hideCard": false,
               "shouldScrollContents": true,
-              "minHeight": 480,
+              "minHeight": 470,
               "animateLoading": true,
               "parentColumnSpace": 19.4365234375,
               "leftColumn": 0,
@@ -1686,7 +1684,7 @@
                   "widgetName": "Canvas6",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 480,
+                  "bottomRow": 470,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": true,
@@ -1749,8 +1747,8 @@
                       "isCanvas": true,
                       "displayName": "Tabs",
                       "iconSVG": "/static/media/icon.74a6d653c8201e66f1cd367a3fba2657.svg",
-                      "topRow": 7,
-                      "bottomRow": 46,
+                      "topRow": 6,
+                      "bottomRow": 45,
                       "parentRowSpace": 10,
                       "type": "TABS_WIDGET",
                       "hideCard": false,
@@ -4368,12 +4366,6 @@
                                 },
                                 {
                                   "key": "primaryColumns.customColumn1.boxShadow"
-                                },
-                                {
-                                  "key": "primaryColumns.variant_id.computedValue"
-                                },
-                                {
-                                  "key": "primaryColumns.variants_inv_ids.computedValue"
                                 }
                               ],
                               "leftColumn": 0,
@@ -4412,7 +4404,7 @@
                               },
                               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                               "originalBottomRow": 43,
-                              "columnUpdatedAt": 1678763695289,
+                              "columnUpdatedAt": 1678844047137,
                               "primaryColumnId": "itemcode",
                               "defaultSelectedRowIndices": "",
                               "widgetName": "Table2",
@@ -4431,9 +4423,7 @@
                                 "stock",
                                 "external_id",
                                 "shopify_inv_id",
-                                "customColumn1",
-                                "variant_id",
-                                "variants_inv_ids"
+                                "customColumn1"
                               ],
                               "dynamicPropertyPathList": [
                                 {
@@ -4871,64 +4861,6 @@
                                   "customAlias": "",
                                   "buttonLabel": "Aanmaken",
                                   "onClick": "{{JS_Shopify.Create_Product_Variants()}}"
-                                },
-                                "variant_id": {
-                                  "allowCellWrapping": false,
-                                  "index": 13,
-                                  "width": 150,
-                                  "originalId": "variant_id",
-                                  "id": "variant_id",
-                                  "alias": "variant_id",
-                                  "horizontalAlignment": "LEFT",
-                                  "verticalAlignment": "CENTER",
-                                  "columnType": "text",
-                                  "textColor": "",
-                                  "textSize": "0.875rem",
-                                  "fontStyle": "",
-                                  "enableFilter": true,
-                                  "enableSort": true,
-                                  "isVisible": true,
-                                  "isDisabled": false,
-                                  "isCellEditable": false,
-                                  "isEditable": false,
-                                  "isCellVisible": true,
-                                  "isDerived": false,
-                                  "label": "variant_id",
-                                  "isSaveVisible": true,
-                                  "isDiscardVisible": true,
-                                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"variant_id\"]))}}",
-                                  "sticky": "",
-                                  "validation": {},
-                                  "cellBackground": ""
-                                },
-                                "variants_inv_ids": {
-                                  "allowCellWrapping": false,
-                                  "index": 14,
-                                  "width": 150,
-                                  "originalId": "variants_inv_ids",
-                                  "id": "variants_inv_ids",
-                                  "alias": "variants_inv_ids",
-                                  "horizontalAlignment": "LEFT",
-                                  "verticalAlignment": "CENTER",
-                                  "columnType": "text",
-                                  "textColor": "",
-                                  "textSize": "0.875rem",
-                                  "fontStyle": "",
-                                  "enableFilter": true,
-                                  "enableSort": true,
-                                  "isVisible": true,
-                                  "isDisabled": false,
-                                  "isCellEditable": false,
-                                  "isEditable": false,
-                                  "isCellVisible": true,
-                                  "isDerived": false,
-                                  "label": "variants_inv_ids",
-                                  "isSaveVisible": true,
-                                  "isDiscardVisible": true,
-                                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"variants_inv_ids\"]))}}",
-                                  "sticky": "",
-                                  "validation": {},
-                                  "cellBackground": ""
                                 }
                               },
                               "onRowSelected": "",
@@ -5037,7 +4969,7 @@
                         "label"
                       ],
                       "topRow": 1,
-                      "bottomRow": 6,
+                      "bottomRow": 5,
                       "parentRowSpace": 10,
                       "type": "TEXT_WIDGET",
                       "hideCard": false,
@@ -5099,7 +5031,7 @@
                 }
               ],
               "key": "tmwibr4aef",
-              "height": 480,
+              "height": 470,
               "isDeprecated": false,
               "rightColumn": 23,
               "detachFromLayout": true,
