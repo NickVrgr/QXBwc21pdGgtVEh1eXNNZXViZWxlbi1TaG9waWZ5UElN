@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO vrgr_vargar.\"users\" (\n\t\"user_email\",\n\t\"user_name\",\n\t\"password\",\n\t\"created_by\")\nVALUES (\n\t{{Input_InsertEmail.inputText}},\n\t{{Input_Insertname.inputText}},\n\tcrypt({{Input_Password.inputText}}, gen_salt('bf')),\n\t'{{appsmith.user.email}}'\n\t);",
+      "body": "INSERT INTO vrgr_thuysmeubelen.\"users\" (\n\t\"user_email\",\n\t\"user_name\",\n\t\"password\",\n\t\"created_by\")\nVALUES (\n\t{{Input_InsertEmail.inputText}},\n\t{{Input_Insertname.inputText}},\n\tcrypt({{Input_Password.inputText}}, gen_salt('bf')),\n\t'{{appsmith.user.email}}'\n\t);",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

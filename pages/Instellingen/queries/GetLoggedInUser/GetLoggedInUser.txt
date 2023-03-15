@@ -1,2 +1,2 @@
-select user_email, session_expiration_date from vrgr_vargar.users
+select user_email, session_expiration_date from vrgr_thuysmeubelen.users
 where session_id = {{appsmith.store.userSession.session_id || crypto.getRandomValues()}}

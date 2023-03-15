@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE vrgr_vargar.settings SET\n\t\t\"settings\" = '{\"shopify_subdomain\":\"{{Input_Subdomain.inputText}}\",\"api_key\":\"{{Input_API_Key.inputText}}\",\"locationID\":{{Input_LocationID.inputText}}}'\nWHERE \"id\" = {{GetSettings.data[0].id}};",
+      "body": "UPDATE vrgr_thuysmeubelen.settings SET\n\t\t\"settings\" = '{\"shopify_subdomain\":\"{{Input_Subdomain.inputText}}\",\"api_key\":\"{{Input_API_Key.inputText}}\",\"locationID\":{{Input_LocationID.inputText}}}'\nWHERE \"id\" = {{GetSettings.data[0].id}};",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

@@ -1,4 +1,4 @@
 SELECT details -> 'itemCode' as Itemcode, details -> 'description' as Omschrijving,details ->> 'Product type' as Categorie,   *  
-FROM "vrgr_vargar".products
+FROM "vrgr_thuysmeubelen".products
 WHERE details ->> 'Product type' ilike '%{{select_Categories.selectedOptionValue}}%' 
 and details is not null;

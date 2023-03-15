@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE vrgr_vargar.users\n  SET session_id = {{crypto.randomUUID()}}\n\t\t ,session_expiration_date = {{moment().add(1, 'weeks').valueOf()}}\n\t\t ,last_loggedin_date = {{moment().format('YYYY-MM-DD HH:mm:SS.sss')}}\n  WHERE session_id = {{ appsmith.store.userSession.session_id }}\n\tRETURNING session_id;",
+      "body": "UPDATE vrgr_thuysmeubelen.users\n  SET session_id = {{crypto.randomUUID()}}\n\t\t ,session_expiration_date = {{moment().add(1, 'weeks').valueOf()}}\n\t\t ,last_loggedin_date = {{moment().format('YYYY-MM-DD HH:mm:SS.sss')}}\n  WHERE session_id = {{ appsmith.store.userSession.session_id }}\n\tRETURNING session_id;",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

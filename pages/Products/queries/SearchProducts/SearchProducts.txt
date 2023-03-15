@@ -1,4 +1,4 @@
 SELECT details -> 'itemCode' as Itemcode, details -> 'description' as Omschrijving,details ->> 'Product type' as Categorie,   *  
-FROM "vrgr_vargar".products
+FROM "vrgr_thuysmeubelen".products
 where details is not null
 and pricing is not null;

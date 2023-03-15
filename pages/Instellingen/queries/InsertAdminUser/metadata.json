@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO vrgr_vargar.admin_settings\n  (admin_user, created_by)\nVALUES\n  (\n    {{ Input_Email.inputText }},\n    {{ GetLoggedInUser.data[0].user_email }}\n  );",
+      "body": "INSERT INTO vrgr_thuysmeubelen.admin_settings\n  (admin_user, created_by)\nVALUES\n  (\n    {{ Input_Email.inputText }},\n    {{ GetLoggedInUser.data[0].user_email }}\n  );",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

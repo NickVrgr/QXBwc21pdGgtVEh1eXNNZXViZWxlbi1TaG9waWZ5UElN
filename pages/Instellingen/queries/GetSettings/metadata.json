@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT * FROM vrgr_vargar.admin_settings\norder by id desc;",
+      "body": "SELECT * FROM vrgr_thuysmeubelen.admin_settings\norder by id desc;",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

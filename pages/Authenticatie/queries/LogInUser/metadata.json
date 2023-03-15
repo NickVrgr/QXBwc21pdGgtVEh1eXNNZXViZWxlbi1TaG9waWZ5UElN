@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT id\n  FROM vrgr_vargar.users\n WHERE user_email = {{Input1.inputText}}\n   AND password = crypt({{Input2.inputText}}, password);",
+      "body": "SELECT id\n  FROM vrgr_thuysmeubelen.users\n WHERE user_email = {{Input1.inputText}}\n   AND password = crypt({{Input2.inputText}}, password);",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

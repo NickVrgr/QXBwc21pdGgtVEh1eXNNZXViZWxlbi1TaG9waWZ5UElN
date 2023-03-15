@@ -1,4 +1,4 @@
-UPDATE vrgr_vargar.users
+UPDATE vrgr_thuysmeubelen.users
   SET session_id = {{crypto.randomUUID()}}
 		 ,session_expiration_date = {{moment().add(2, 'hours').valueOf()}}
 		 ,last_loggedin_date = {{moment()}}
