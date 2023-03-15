@@ -1,4 +1,4 @@
-UPDATE "vrgr_vargar".products
+UPDATE "vrgr_thuysmeubelen".products
 set shopify_id = {{this.params.shopify_id}},
     shopify_inv_id = {{this.params.shopify_inv_id}},
 		variants_inv_ids = variants_inv_ids || '["{{this.params.shopify_inv_id}}"]'::jsonb,

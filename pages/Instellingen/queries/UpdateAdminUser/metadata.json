@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE vrgr_vargar.admin_settings\n  SET orderconf_email = {{Table1.updatedRow.orderconf_email == 'Ja' ? 1 : 0}}\n  WHERE id = {{Table1.updatedRow.id}}\n",
+      "body": "UPDATE vrgr_thuysmeubelen.admin_settings\n  SET orderconf_email = {{Table1.updatedRow.orderconf_email == 'Ja' ? 1 : 0}}\n  WHERE id = {{Table1.updatedRow.id}}\n",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

@@ -1,1 +1,1 @@
-SELECT * FROM vrgr_vargar.settings;
+SELECT * FROM vrgr_thuysmeubelen.settings;

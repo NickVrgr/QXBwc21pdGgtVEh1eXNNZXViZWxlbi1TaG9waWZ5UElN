@@ -1,1 +1,1 @@
-DELETE FROM "vrgr_vargar".admin_settings WHERE id = {{Table1.triggeredRow.id}};
+DELETE FROM "vrgr_thuysmeubelen".admin_settings WHERE id = {{Table1.triggeredRow.id}};

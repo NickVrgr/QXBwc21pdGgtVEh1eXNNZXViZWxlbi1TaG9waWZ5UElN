@@ -1,4 +1,4 @@
-INSERT INTO vrgr_vargar."users" (
+INSERT INTO vrgr_thuysmeubelen."users" (
 	"user_email",
 	"user_name",
 	"password",

@@ -1,3 +1,3 @@
-UPDATE vrgr_vargar.settings SET
+UPDATE vrgr_thuysmeubelen.settings SET
 		"settings" = '{"shopify_subdomain":"{{Input_Subdomain.inputText}}","api_key":"{{Input_API_Key.inputText}}","locationID":{{Input_LocationID.inputText}}}'
 WHERE "id" = {{GetSettings.data[0].id}};

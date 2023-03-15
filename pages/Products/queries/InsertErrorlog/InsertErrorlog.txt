@@ -1,4 +1,4 @@
-INSERT INTO  "vrgr_vargar".errorlog
+INSERT INTO  "vrgr_thuysmeubelen".errorlog
   (code,message, created_by)
 VALUES
   (

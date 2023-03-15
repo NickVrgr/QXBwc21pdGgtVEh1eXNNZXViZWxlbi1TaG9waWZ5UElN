@@ -1,4 +1,4 @@
-INSERT INTO  "vrgr_barendrechtelektra".errorlog
+INSERT INTO  "vrgr_thuysmeubelen".errorlog
   (message, created_by, page, stored_values)
 VALUES
   (

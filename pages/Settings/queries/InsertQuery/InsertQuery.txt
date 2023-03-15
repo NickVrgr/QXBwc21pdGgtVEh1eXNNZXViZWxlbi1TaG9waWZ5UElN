@@ -1,4 +1,4 @@
-INSERT INTO vrgr_vargar."settings" (
+INSERT INTO vrgr_thuysmeubelen."settings" (
 	"id",
 	"shopify_subdomain",
 	"password",

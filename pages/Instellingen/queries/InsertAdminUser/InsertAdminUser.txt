@@ -1,4 +1,4 @@
-INSERT INTO vrgr_vargar.admin_settings
+INSERT INTO vrgr_thuysmeubelen.admin_settings
   (admin_user, created_by)
 VALUES
   (

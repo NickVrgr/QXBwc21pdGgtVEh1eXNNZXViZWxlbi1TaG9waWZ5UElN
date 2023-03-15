@@ -1,1 +1,1 @@
-SELECT * FROM "vrgr_vargar".admin_settings;
+SELECT * FROM "vrgr_thuysmeubelen".admin_settings;

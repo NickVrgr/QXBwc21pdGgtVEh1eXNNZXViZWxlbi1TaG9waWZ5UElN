@@ -13,13 +13,13 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 1720,
+          "bottomRow": 1640,
           "containerStyle": "none",
           "snapRows": 74,
           "parentRowSpace": 1,
           "type": "CANVAS_WIDGET",
           "canExtend": true,
-          "version": 76,
+          "version": 77,
           "minHeight": 750,
           "parentColumnSpace": 1,
           "dynamicBindingPathList": [],
@@ -42,7 +42,7 @@
                   "boxShadow": "none",
                   "widgetName": "Canvas4",
                   "topRow": 0,
-                  "bottomRow": 310,
+                  "bottomRow": 300,
                   "parentRowSpace": 1,
                   "canExtend": true,
                   "type": "CANVAS_WIDGET",
@@ -392,7 +392,7 @@
                       "originalTopRow": 6,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 19,
+                      "originalBottomRow": 29,
                       "minDynamicHeight": 10
                     }
                   ],
@@ -436,12 +436,12 @@
                 "notification"
               ],
               "topRow": 87,
-              "bottomRow": 477,
+              "bottomRow": 39,
               "parentRowSpace": 10,
               "type": "MODAL_WIDGET",
               "hideCard": false,
               "shouldScrollContents": true,
-              "minHeight": 410,
+              "minHeight": 390,
               "animateLoading": true,
               "parentColumnSpace": 19.75,
               "leftColumn": 23,
@@ -851,7 +851,7 @@
                       "originalTopRow": 6,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 39,
+                      "originalBottomRow": 37,
                       "minDynamicHeight": 10
                     }
                   ],
@@ -1482,6 +1482,7 @@
                         }
                       },
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "columnUpdatedAt": 1678839386940,
                       "defaultSelectedRowIndices": [
                         0
                       ],
@@ -1554,7 +1555,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "user_email": {
                           "allowCellWrapping": false,
@@ -1582,7 +1584,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"user_email\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "created_by": {
                           "allowCellWrapping": false,
@@ -1610,7 +1613,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"created_by\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "created_date": {
                           "allowCellWrapping": false,
@@ -1638,7 +1642,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"created_date\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "last_modified_date": {
                           "allowCellWrapping": false,
@@ -1667,7 +1672,8 @@
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"last_modified_date\"]))}}",
                           "validation": {},
                           "cellBackground": "",
-                          "outputFormat": "DD/MM/YYYY HH:mm"
+                          "outputFormat": "DD/MM/YYYY HH:mm",
+                          "sticky": ""
                         },
                         "customColumn1": {
                           "allowCellWrapping": false,
@@ -1700,7 +1706,8 @@
                           "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
                           "customAlias": "",
                           "buttonLabel": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'X'))}}",
-                          "onClick": "{{showModal('Modal_DeleteUser')}}"
+                          "onClick": "{{showModal('Modal_DeleteUser')}}",
+                          "sticky": ""
                         },
                         "password": {
                           "allowCellWrapping": false,
@@ -1728,7 +1735,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"password\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "user_name": {
                           "allowCellWrapping": false,
@@ -1756,7 +1764,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"user_name\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "session_expiration_date": {
                           "allowCellWrapping": false,
@@ -1784,7 +1793,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"session_expiration_date\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "session_id": {
                           "allowCellWrapping": false,
@@ -1812,7 +1822,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"session_id\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "uuid": {
                           "allowCellWrapping": false,
@@ -1840,7 +1851,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"uuid\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "last_loggedin_date": {
                           "allowCellWrapping": false,
@@ -1868,7 +1880,8 @@
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"last_loggedin_date\"]))}}",
                           "validation": {},
-                          "cellBackground": ""
+                          "cellBackground": "",
+                          "sticky": ""
                         },
                         "customColumn2": {
                           "allowCellWrapping": false,
@@ -1901,10 +1914,12 @@
                           "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
                           "customAlias": "",
                           "buttonLabel": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'Aanpassen'))}}",
-                          "onClick": "{{showModal('Modal_EditUser')}}"
+                          "onClick": "{{showModal('Modal_EditUser')}}",
+                          "sticky": ""
                         }
                       },
                       "key": "512e64t0xg",
+                      "canFreezeColumn": false,
                       "isDeprecated": false,
                       "rightColumn": 64,
                       "textSize": "0.875rem",
