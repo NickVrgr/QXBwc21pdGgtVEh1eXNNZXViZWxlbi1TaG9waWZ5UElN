@@ -2,5 +2,5 @@ UPDATE "vrgr_thuysmeubelen".products
 set shopify_id = {{this.params.shopify_id}},
     shopify_inv_id = {{this.params.shopify_inv_id}},
 		variants_inv_ids = variants_inv_ids || '["{{this.params.shopify_inv_id}}"]'::jsonb,
-		variant_id = {{this.params.variant_id}}
+		variants_ids = variants_ids || '["{{this.params.variant_id}}"]'::jsonb
 where id = {{this.params.id}}

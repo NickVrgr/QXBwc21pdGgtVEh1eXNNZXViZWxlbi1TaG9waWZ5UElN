@@ -261,7 +261,7 @@
                           "key": "primaryColumns.variants_inv_ids.computedValue"
                         },
                         {
-                          "key": "primaryColumns.variant_id.computedValue"
+                          "key": "primaryColumns.variants_ids.computedValue"
                         }
                       ],
                       "leftColumn": 0,
@@ -321,7 +321,7 @@
                         "shopify_id",
                         "shopify_inv_id",
                         "variants_inv_ids",
-                        "variant_id",
+                        "variants_ids",
                         "customColumn1"
                       ],
                       "dynamicPropertyPathList": [],
@@ -634,10 +634,10 @@
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variants_inv_ids))}}",
                           "cellBackground": ""
                         },
-                        "variant_id": {
+                        "variants_ids": {
                           "index": 14,
                           "width": 150,
-                          "id": "variant_id",
+                          "id": "variants_ids",
                           "horizontalAlignment": "LEFT",
                           "verticalAlignment": "CENTER",
                           "columnType": "text",
@@ -649,8 +649,8 @@
                           "isDisabled": false,
                           "isCellVisible": true,
                           "isDerived": false,
-                          "label": "variant_id",
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variant_id))}}",
+                          "label": "variants_ids",
+                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variants_ids))}}",
                           "cellBackground": ""
                         }
                       },
@@ -4366,6 +4366,12 @@
                                 },
                                 {
                                   "key": "primaryColumns.customColumn1.boxShadow"
+                                },
+                                {
+                                  "key": "primaryColumns.variants_inv_ids.computedValue"
+                                },
+                                {
+                                  "key": "primaryColumns.variants_ids.computedValue"
                                 }
                               ],
                               "leftColumn": 0,
@@ -4404,7 +4410,7 @@
                               },
                               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                               "originalBottomRow": 43,
-                              "columnUpdatedAt": 1678844047137,
+                              "columnUpdatedAt": 1679016308398,
                               "primaryColumnId": "itemcode",
                               "defaultSelectedRowIndices": "",
                               "widgetName": "Table2",
@@ -4423,7 +4429,9 @@
                                 "stock",
                                 "external_id",
                                 "shopify_inv_id",
-                                "customColumn1"
+                                "customColumn1",
+                                "variants_inv_ids",
+                                "variants_ids"
                               ],
                               "dynamicPropertyPathList": [
                                 {
@@ -4861,6 +4869,64 @@
                                   "customAlias": "",
                                   "buttonLabel": "Aanmaken",
                                   "onClick": "{{JS_Shopify.Create_Product_Variants()}}"
+                                },
+                                "variants_inv_ids": {
+                                  "allowCellWrapping": false,
+                                  "index": 14,
+                                  "width": 150,
+                                  "originalId": "variants_inv_ids",
+                                  "id": "variants_inv_ids",
+                                  "alias": "variants_inv_ids",
+                                  "horizontalAlignment": "LEFT",
+                                  "verticalAlignment": "CENTER",
+                                  "columnType": "text",
+                                  "textColor": "",
+                                  "textSize": "0.875rem",
+                                  "fontStyle": "",
+                                  "enableFilter": true,
+                                  "enableSort": true,
+                                  "isVisible": true,
+                                  "isDisabled": false,
+                                  "isCellEditable": false,
+                                  "isEditable": false,
+                                  "isCellVisible": true,
+                                  "isDerived": false,
+                                  "label": "variants_inv_ids",
+                                  "isSaveVisible": true,
+                                  "isDiscardVisible": true,
+                                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"variants_inv_ids\"]))}}",
+                                  "sticky": "",
+                                  "validation": {},
+                                  "cellBackground": ""
+                                },
+                                "variants_ids": {
+                                  "allowCellWrapping": false,
+                                  "index": 14,
+                                  "width": 150,
+                                  "originalId": "variants_ids",
+                                  "id": "variants_ids",
+                                  "alias": "variants_ids",
+                                  "horizontalAlignment": "LEFT",
+                                  "verticalAlignment": "CENTER",
+                                  "columnType": "text",
+                                  "textColor": "",
+                                  "textSize": "0.875rem",
+                                  "fontStyle": "",
+                                  "enableFilter": true,
+                                  "enableSort": true,
+                                  "isVisible": true,
+                                  "isDisabled": false,
+                                  "isCellEditable": false,
+                                  "isEditable": false,
+                                  "isCellVisible": true,
+                                  "isDerived": false,
+                                  "label": "variants_ids",
+                                  "isSaveVisible": true,
+                                  "isDiscardVisible": true,
+                                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"variants_ids\"]))}}",
+                                  "sticky": "",
+                                  "validation": {},
+                                  "cellBackground": ""
                                 }
                               },
                               "onRowSelected": "",
@@ -4953,10 +5019,10 @@
                       "parentId": "uxywy9srcs",
                       "renderMode": "CANVAS",
                       "isLoading": false,
-                      "originalTopRow": 7,
+                      "originalTopRow": 6,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 46,
+                      "originalBottomRow": 45,
                       "minDynamicHeight": 15
                     },
                     {
@@ -5389,7 +5455,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "DB",
               "jsonPathKeys": [
-                "select_Categories.selectedOptionValue"
+                "select_Categories.selectedOptionValue "
               ],
               "timeoutInMillisecond": 10000
             }
