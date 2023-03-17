@@ -739,7 +739,7 @@
                         }
                       ],
                       "text": "Submit",
-                      "isDisabled": "{{data_table.selectedRows.data < 1||data_table.selectedRows.some(product => product.shopify_id != null) }}",
+                      "isDisabled": "//{{data_table.selectedRows.data < 1||data_table.selectedRows.some(product => product.shopify_id != null) }}",
                       "key": "folxbjcz72",
                       "isDeprecated": false,
                       "rightColumn": 63,

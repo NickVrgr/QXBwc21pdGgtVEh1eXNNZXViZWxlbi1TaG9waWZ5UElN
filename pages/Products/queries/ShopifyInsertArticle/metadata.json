@@ -7,7 +7,7 @@
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "n8n:5678/webhook/shopify/create-products"
+        "url": "n8n:5678/webhook-test/shopify/create-products"
       },
       "invalids": [],
       "messages": [],

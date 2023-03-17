@@ -21,9 +21,7 @@ export default {
 				showAlert(res.error.message,'error')
 			} else {
 				console.log(res)
-				console.log(res.products[0].variant.inventory_item_id)
-				console.log(res.products[0].variant.id)
-				UpdateShopifyInvID.run({inv_ids:res.products[0].variant.inventory_item_id,variant_id:res.products[0].variant.id})
+				UpdateShopifyInvID.run({inv_ids:res.products[0].variant.inventory_item_id,variant_id:res.products[0].variant.id,shopify_id: res.products[0].variant.product_id})
 				showAlert('Variant inserted', 'success')
 			}
 		})
