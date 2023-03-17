@@ -8,8 +8,9 @@ export default {
 			UpdateShopifyID.run({shopify_id: product.product.id, shopify_inv_id:product.product.variants[0].inventory_item_id, id:product.product.variants[0].sku, variant_id:product.product.variants[0].id})
 		})
 		})
-  .then(() => showAlert('Product inserted', 'success'))
 	.then(() => GetProducts.run())
+  .then(() => showAlert('Product inserted', 'success'))
+	
   // .catch((error) => {	showAlert(`${JSON.stringify(error.message)}`,'error');
 											// InsertErrorlog.run() })												//write code here
 	},
@@ -20,8 +21,8 @@ export default {
 			if (res.error) {
 				showAlert(res.error.message,'error')
 			} else {
-				console.log(res)
-				UpdateShopifyInvID.run({inv_ids:res.products[0].variant.inventory_item_id,variant_id:res.products[0].variant.id,shopify_id: res.products[0].variant.product_id})
+				UpdateShopifyInvID.run({inv_ids:res.products[0].variant.inventory_item_id,variant_id:res.products[0].variant.id,shopify_id: res.products[0].variant.product_id});
+				SearchProducts.run()
 				showAlert('Variant inserted', 'success')
 			}
 		})
