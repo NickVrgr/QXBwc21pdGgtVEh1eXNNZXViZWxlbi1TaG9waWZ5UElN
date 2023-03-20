@@ -173,12 +173,12 @@
                     {
                       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
                       "multiRowSelection": true,
-                      "onSort": "{{SelectQuery.run()}}",
+                      "onSort": "{{GetProducts.run()}}",
                       "isVisibleDownload": false,
                       "iconSVG": "/static/media/icon.db8a9cbd.svg",
                       "topRow": 12,
                       "isSortable": true,
-                      "onPageChange": "{{SelectQuery.run()}}",
+                      "onPageChange": "{{GetProducts.run()}}",
                       "type": "TABLE_WIDGET",
                       "animateLoading": true,
                       "dynamicBindingPathList": [
@@ -262,6 +262,9 @@
                         },
                         {
                           "key": "primaryColumns.variants_ids.computedValue"
+                        },
+                        {
+                          "key": "primaryColumns.active.computedValue"
                         }
                       ],
                       "leftColumn": 0,
@@ -273,7 +276,7 @@
                       "version": 3,
                       "totalRecordsCount": 0,
                       "isLoading": false,
-                      "onSearchTextChanged": "{{SelectQuery.run()}}",
+                      "onSearchTextChanged": "{{GetProducts.run()}}",
                       "childStylesheet": {
                         "button": {
                           "boxShadow": "none",
@@ -322,6 +325,7 @@
                         "shopify_inv_id",
                         "variants_inv_ids",
                         "variants_ids",
+                        "active",
                         "customColumn1"
                       ],
                       "dynamicPropertyPathList": [],
@@ -652,6 +656,25 @@
                           "label": "variants_ids",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variants_ids))}}",
                           "cellBackground": ""
+                        },
+                        "active": {
+                          "index": 15,
+                          "width": 150,
+                          "id": "active",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": false,
+                          "isDisabled": false,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "active",
+                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.active))}}",
+                          "cellBackground": ""
                         }
                       },
                       "key": "zba5qel0au",
@@ -686,7 +709,7 @@
                       "label": "Data",
                       "searchKey": "",
                       "parentId": "59rw5mx0bq",
-                      "serverSidePaginationEnabled": false,
+                      "serverSidePaginationEnabled": true,
                       "renderMode": "CANVAS",
                       "horizontalAlignment": "LEFT",
                       "isVisibleSearch": true,
@@ -773,7 +796,7 @@
                       "type": "SELECT_WIDGET",
                       "serverSideFiltering": false,
                       "hideCard": false,
-                      "defaultOptionValue": "",
+                      "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( GetCategories.data[0].value))(select_Categories.options, select_Categories.serverSideFiltering) }}",
                       "animateLoading": true,
                       "parentColumnSpace": 19.4365234375,
                       "dynamicTriggerPathList": [
@@ -791,6 +814,9 @@
                         },
                         {
                           "key": "options"
+                        },
+                        {
+                          "key": "defaultOptionValue"
                         }
                       ],
                       "labelPosition": "Left",
@@ -5419,11 +5445,14 @@
               "timeoutInMillisecond": 10000
             },
             {
-              "id": "Products_SearchProducts",
-              "name": "SearchProducts",
+              "id": "Products_JS_User.checkSessionID",
+              "name": "JS_User.checkSessionID",
+              "collectionId": "Products_JS_User",
               "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [],
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "() => {\n  if (!appsmith.store?.userSession?.session_id && appsmith.mode != \"EDIT\") {\n    navigateTo(\"Authenticatie\", {}, \"SAME_WINDOW\");\n  } else {\n    JS_User.checkUserLogin();\n  }\n}"
+              ],
               "timeoutInMillisecond": 10000
             },
             {
@@ -5437,25 +5466,25 @@
           ],
           [
             {
-              "id": "Products_JS_User.checkSessionID",
-              "name": "JS_User.checkSessionID",
-              "collectionId": "Products_JS_User",
-              "confirmBeforeExecute": false,
-              "pluginType": "JS",
-              "jsonPathKeys": [
-                "() => {\n  if (!appsmith.store?.userSession?.session_id && appsmith.mode != \"EDIT\") {\n    navigateTo(\"Authenticatie\", {}, \"SAME_WINDOW\");\n  } else {\n    JS_User.checkUserLogin();\n  }\n}"
-              ],
-              "timeoutInMillisecond": 10000
-            }
-          ],
-          [
-            {
               "id": "Products_GetProducts",
               "name": "GetProducts",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
               "jsonPathKeys": [
-                "select_Categories.selectedOptionValue "
+                " (data_table.pageNo - 1) * data_table.pageSize ",
+                "select_Categories.selectedOptionValue || GetCategories.data[0].value ",
+                " data_table.pageSize "
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Products_SearchProducts",
+              "name": "SearchProducts",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                " (data_table.pageNo - 1) * data_table.pageSize ",
+                " data_table.pageSize "
               ],
               "timeoutInMillisecond": 10000
             }

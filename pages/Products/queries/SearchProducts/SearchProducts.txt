@@ -1,4 +1,5 @@
 SELECT details -> 'itemCode' as Itemcode, details -> 'description' as Omschrijving,details ->> 'Product type' as Categorie,   *  
 FROM "vrgr_thuysmeubelen".products
 where details is not null
-and pricing is not null;
+and pricing is not null
+LIMIT {{ data_table.pageSize }} OFFSET {{ (data_table.pageNo - 1) * data_table.pageSize }};

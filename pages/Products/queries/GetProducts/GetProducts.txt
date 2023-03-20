@@ -1,4 +1,5 @@
 SELECT details -> 'itemCode' as Itemcode, details -> 'description' as Omschrijving,details ->> 'Product type' as Categorie,   *  
 FROM "vrgr_thuysmeubelen".products
-WHERE details ->> 'Product type' ilike '%{{select_Categories.selectedOptionValue }}%' 
-and details is not null;
+WHERE details ->> 'Product type' ilike '%{{select_Categories.selectedOptionValue || GetCategories.data[0].value }}%' 
+and details is not null
+LIMIT {{ data_table.pageSize }} OFFSET {{ (data_table.pageNo - 1) * data_table.pageSize }};

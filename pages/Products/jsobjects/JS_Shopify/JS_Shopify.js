@@ -8,8 +8,8 @@ export default {
 			UpdateShopifyID.run({shopify_id: product.product.id, shopify_inv_id:product.product.variants[0].inventory_item_id, id:product.product.variants[0].sku, variant_id:product.product.variants[0].id})
 		})
 		})
-	.then(() => GetProducts.run())
   .then(() => showAlert('Product inserted', 'success'))
+	.then(() => GetProducts.run())
 	
   // .catch((error) => {	showAlert(`${JSON.stringify(error.message)}`,'error');
 											// InsertErrorlog.run() })												//write code here
