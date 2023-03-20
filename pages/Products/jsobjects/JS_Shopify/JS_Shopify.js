@@ -2,6 +2,7 @@ export default {
 	 Create_Products: () => {
 		GetSettings.run()
 	.then(() => closeModal('Modal_Tags'))
+	.then(() => showModal('Modal_Loading'))
 	.then(() => ShopifyInsertArticle.run())
   .then((res) => {
 			res.products.forEach(function(product){
@@ -10,12 +11,14 @@ export default {
 		})
   .then(() => showAlert('Product inserted', 'success'))
 	.then(() => GetProducts.run())
+	.then(() => closeModal('Modal_Loading'))
 	
   // .catch((error) => {	showAlert(`${JSON.stringify(error.message)}`,'error');
 											// InsertErrorlog.run() })												//write code here
 	},
 	Create_Product_Variants: () => {
 		GetSettings.run()
+	.then(() => showModal('Modal_Loading'))
 	.then(() => ShopifyInsertArticleVariants.run())
 	.then((res) => {
 			if (res.error) {
@@ -24,6 +27,7 @@ export default {
 				UpdateShopifyInvID.run({inv_ids:res.products[0].variant.inventory_item_id,variant_id:res.products[0].variant.id,shopify_id: res.products[0].variant.product_id});
 				SearchProducts.run()
 				showAlert('Variant inserted', 'success')
+				closeModal('Modal_Loading'))
 			}
 		})
 		.catch((err) => showAlert(JSON.stringify(err,'error')))
