@@ -265,6 +265,9 @@
                         },
                         {
                           "key": "primaryColumns.active.computedValue"
+                        },
+                        {
+                          "key": "primaryColumns.variant_id.computedValue"
                         }
                       ],
                       "leftColumn": 0,
@@ -324,8 +327,9 @@
                         "shopify_id",
                         "shopify_inv_id",
                         "variants_inv_ids",
-                        "variants_ids",
+                        "variant_id",
                         "active",
+                        "variants_ids",
                         "customColumn1"
                       ],
                       "dynamicPropertyPathList": [],
@@ -674,6 +678,25 @@
                           "isDerived": false,
                           "label": "active",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.active))}}",
+                          "cellBackground": ""
+                        },
+                        "variant_id": {
+                          "index": 14,
+                          "width": 150,
+                          "id": "variant_id",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "variant_id",
+                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variant_id))}}",
                           "cellBackground": ""
                         }
                       },
@@ -5539,15 +5562,11 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Products_GetProducts",
-              "name": "GetProducts",
+              "id": "Products_GetCategories",
+              "name": "GetCategories",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
-              "jsonPathKeys": [
-                " (data_table.pageNo - 1) * data_table.pageSize ",
-                "select_Categories.selectedOptionValue || GetCategories.data[0].value ",
-                " data_table.pageSize "
-              ],
+              "jsonPathKeys": [],
               "timeoutInMillisecond": 10000
             },
             {
@@ -5562,6 +5581,17 @@
               "timeoutInMillisecond": 10000
             },
             {
+              "id": "Products_JS_User.checkSessionID",
+              "name": "JS_User.checkSessionID",
+              "collectionId": "Products_JS_User",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "() => {\n  if (!appsmith.store?.userSession?.session_id && appsmith.mode != \"EDIT\") {\n    navigateTo(\"Authenticatie\", {}, \"SAME_WINDOW\");\n  } else {\n    JS_User.checkUserLogin();\n  }\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
               "id": "Products_SelectQuery",
               "name": "SelectQuery",
               "confirmBeforeExecute": false,
@@ -5572,26 +5602,17 @@
           ],
           [
             {
-              "id": "Products_GetCategories",
-              "name": "GetCategories",
+              "id": "Products_GetProducts",
+              "name": "GetProducts",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
-              "jsonPathKeys": [],
-              "timeoutInMillisecond": 10000
-            },
-            {
-              "id": "Products_JS_User.checkSessionID",
-              "name": "JS_User.checkSessionID",
-              "collectionId": "Products_JS_User",
-              "confirmBeforeExecute": false,
-              "pluginType": "JS",
               "jsonPathKeys": [
-                "() => {\n  if (!appsmith.store?.userSession?.session_id && appsmith.mode != \"EDIT\") {\n    navigateTo(\"Authenticatie\", {}, \"SAME_WINDOW\");\n  } else {\n    JS_User.checkUserLogin();\n  }\n}"
+                " (data_table.pageNo - 1) * data_table.pageSize ",
+                " data_table.pageSize ",
+                "select_Categories.selectedOptionValue || GetCategories.data[0].value "
               ],
               "timeoutInMillisecond": 10000
-            }
-          ],
-          [
+            },
             {
               "id": "Products_SearchProducts",
               "name": "SearchProducts",
