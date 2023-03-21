@@ -4352,6 +4352,7 @@
                               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
                               "topRow": 2,
                               "isSortable": true,
+                              "onPageChange": "{{SearchProducts.run()}}",
                               "type": "TABLE_WIDGET_V2",
                               "inlineEditingSaveOption": "ROW_LEVEL",
                               "animateLoading": true,
@@ -4421,6 +4422,12 @@
                                 },
                                 {
                                   "key": "primaryColumns.variants_ids.computedValue"
+                                },
+                                {
+                                  "key": "primaryColumns.variant_id.computedValue"
+                                },
+                                {
+                                  "key": "primaryColumns.active.computedValue"
                                 }
                               ],
                               "leftColumn": 0,
@@ -4434,6 +4441,7 @@
                               "version": 1,
                               "totalRecordsCount": 0,
                               "isLoading": false,
+                              "onSearchTextChanged": "{{SearchProducts.run()}}",
                               "childStylesheet": {
                                 "button": {
                                   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -4480,7 +4488,9 @@
                                 "shopify_inv_id",
                                 "customColumn1",
                                 "variants_inv_ids",
-                                "variants_ids"
+                                "variants_ids",
+                                "variant_id",
+                                "active"
                               ],
                               "dynamicPropertyPathList": [
                                 {
@@ -4497,6 +4507,7 @@
                               },
                               "parentRowSpace": 10,
                               "hideCard": false,
+                              "onPageSizeChange": "{{SearchProducts.run()}}",
                               "parentColumnSpace": 16.35625,
                               "dynamicTriggerPathList": [
                                 {
@@ -4504,6 +4515,15 @@
                                 },
                                 {
                                   "key": "primaryColumns.customColumn1.onClick"
+                                },
+                                {
+                                  "key": "onSearchTextChanged"
+                                },
+                                {
+                                  "key": "onPageChange"
+                                },
+                                {
+                                  "key": "onPageSizeChange"
                                 }
                               ],
                               "borderWidth": "1",
@@ -4976,6 +4996,64 @@
                                   "sticky": "",
                                   "validation": {},
                                   "cellBackground": ""
+                                },
+                                "variant_id": {
+                                  "allowCellWrapping": false,
+                                  "index": 14,
+                                  "width": 150,
+                                  "originalId": "variant_id",
+                                  "id": "variant_id",
+                                  "alias": "variant_id",
+                                  "horizontalAlignment": "LEFT",
+                                  "verticalAlignment": "CENTER",
+                                  "columnType": "text",
+                                  "textColor": "",
+                                  "textSize": "0.875rem",
+                                  "fontStyle": "",
+                                  "enableFilter": true,
+                                  "enableSort": true,
+                                  "isVisible": true,
+                                  "isDisabled": false,
+                                  "isCellEditable": false,
+                                  "isEditable": false,
+                                  "isCellVisible": true,
+                                  "isDerived": false,
+                                  "label": "variant_id",
+                                  "isSaveVisible": true,
+                                  "isDiscardVisible": true,
+                                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"variant_id\"]))}}",
+                                  "sticky": "",
+                                  "validation": {},
+                                  "cellBackground": ""
+                                },
+                                "active": {
+                                  "allowCellWrapping": false,
+                                  "index": 15,
+                                  "width": 150,
+                                  "originalId": "active",
+                                  "id": "active",
+                                  "alias": "active",
+                                  "horizontalAlignment": "LEFT",
+                                  "verticalAlignment": "CENTER",
+                                  "columnType": "checkbox",
+                                  "textColor": "",
+                                  "textSize": "0.875rem",
+                                  "fontStyle": "",
+                                  "enableFilter": true,
+                                  "enableSort": true,
+                                  "isVisible": true,
+                                  "isDisabled": false,
+                                  "isCellEditable": false,
+                                  "isEditable": false,
+                                  "isCellVisible": true,
+                                  "isDerived": false,
+                                  "label": "active",
+                                  "isSaveVisible": true,
+                                  "isDiscardVisible": true,
+                                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"active\"]))}}",
+                                  "sticky": "",
+                                  "validation": {},
+                                  "cellBackground": ""
                                 }
                               },
                               "onRowSelected": "",
@@ -4989,6 +5067,7 @@
                               "label": "Data",
                               "searchKey": "",
                               "parentId": "8ofgr2yf8s",
+                              "serverSidePaginationEnabled": true,
                               "renderMode": "CANVAS",
                               "horizontalAlignment": "LEFT",
                               "isVisibleSearch": true,
