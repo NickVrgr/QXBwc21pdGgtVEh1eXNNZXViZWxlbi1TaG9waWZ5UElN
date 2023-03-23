@@ -806,6 +806,11 @@
                       "boxShadow": "none",
                       "widgetName": "select_Categories",
                       "isFilterable": true,
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "onOptionChange"
+                        }
+                      ],
                       "displayName": "Select",
                       "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
                       "labelText": "Categories",
@@ -862,7 +867,7 @@
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "onOptionChange": "{{GetProducts.run()}}",
+                      "onOptionChange": "{{GetProducts.run()\n.then(() => SearchProducts.run())}}",
                       "minDynamicHeight": 4
                     },
                     {
@@ -1714,12 +1719,12 @@
                 "notification"
               ],
               "topRow": 21,
-              "bottomRow": 47,
+              "bottomRow": 48,
               "parentRowSpace": 10,
               "type": "MODAL_WIDGET",
               "hideCard": false,
               "shouldScrollContents": true,
-              "minHeight": 470,
+              "minHeight": 480,
               "animateLoading": true,
               "parentColumnSpace": 19.4365234375,
               "leftColumn": 0,
@@ -1733,7 +1738,7 @@
                   "widgetName": "Canvas6",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 470,
+                  "bottomRow": 480,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": true,
@@ -1796,8 +1801,8 @@
                       "isCanvas": true,
                       "displayName": "Tabs",
                       "iconSVG": "/static/media/icon.74a6d653c8201e66f1cd367a3fba2657.svg",
-                      "topRow": 6,
-                      "bottomRow": 45,
+                      "topRow": 7,
+                      "bottomRow": 46,
                       "parentRowSpace": 10,
                       "type": "TABS_WIDGET",
                       "hideCard": false,
@@ -4352,7 +4357,7 @@
                               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
                               "topRow": 2,
                               "isSortable": true,
-                              "onPageChange": "{{SearchProducts.run()}}",
+                              "onPageChange": "{{GetProducts.run()}}",
                               "type": "TABLE_WIDGET_V2",
                               "inlineEditingSaveOption": "ROW_LEVEL",
                               "animateLoading": true,
@@ -4441,7 +4446,7 @@
                               "version": 1,
                               "totalRecordsCount": 0,
                               "isLoading": false,
-                              "onSearchTextChanged": "{{SearchProducts.run()}}",
+                              "onSearchTextChanged": "{{GetProducts.run()}}",
                               "childStylesheet": {
                                 "button": {
                                   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -4507,7 +4512,7 @@
                               },
                               "parentRowSpace": 10,
                               "hideCard": false,
-                              "onPageSizeChange": "{{SearchProducts.run()}}",
+                              "onPageSizeChange": "{{GetProducts.run()}}",
                               "parentColumnSpace": 16.35625,
                               "dynamicTriggerPathList": [
                                 {
@@ -5063,7 +5068,7 @@
                               "rightColumn": 63,
                               "textSize": "0.875rem",
                               "widgetId": "nf912sfrd1",
-                              "tableData": "{{SearchProducts.data}}",
+                              "tableData": "{{GetProducts.data}}",
                               "label": "Data",
                               "searchKey": "",
                               "parentId": "8ofgr2yf8s",
@@ -5147,10 +5152,10 @@
                       "parentId": "uxywy9srcs",
                       "renderMode": "CANVAS",
                       "isLoading": false,
-                      "originalTopRow": 6,
+                      "originalTopRow": 7,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 45,
+                      "originalBottomRow": 46,
                       "minDynamicHeight": 15
                     },
                     {
@@ -5163,7 +5168,7 @@
                         "label"
                       ],
                       "topRow": 1,
-                      "bottomRow": 5,
+                      "bottomRow": 6,
                       "parentRowSpace": 10,
                       "type": "TEXT_WIDGET",
                       "hideCard": false,
@@ -5206,7 +5211,7 @@
                       "originalTopRow": 1,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 6,
+                      "originalBottomRow": 5,
                       "fontSize": "1rem",
                       "minDynamicHeight": 4
                     }
@@ -5225,7 +5230,7 @@
                 }
               ],
               "key": "tmwibr4aef",
-              "height": 470,
+              "height": 480,
               "isDeprecated": false,
               "rightColumn": 23,
               "detachFromLayout": true,
@@ -5687,19 +5692,9 @@
               "pluginType": "DB",
               "jsonPathKeys": [
                 " (data_table.pageNo - 1) * data_table.pageSize ",
+                "select_Categories.selectedOptionValue || GetCategories.data[0].value ",
                 " data_table.pageSize ",
-                "select_Categories.selectedOptionValue || GetCategories.data[0].value "
-              ],
-              "timeoutInMillisecond": 10000
-            },
-            {
-              "id": "Products_SearchProducts",
-              "name": "SearchProducts",
-              "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [
-                " (data_table.pageNo - 1) * data_table.pageSize ",
-                " data_table.pageSize "
+                "data_table.searchText"
               ],
               "timeoutInMillisecond": 10000
             }
