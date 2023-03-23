@@ -25,7 +25,7 @@ export default {
 				showAlert(res.error.message,'error')
 			} else {
 				UpdateShopifyInvID.run({inv_ids:res.products[0].variant.inventory_item_id,variant_id:res.products[0].variant.id,shopify_id: res.products[0].variant.product_id});
-				SearchProducts.run()
+				GetProducts.run()
 				showAlert('Variant inserted', 'success')
 				closeModal('Modal_Loading')
 			}
