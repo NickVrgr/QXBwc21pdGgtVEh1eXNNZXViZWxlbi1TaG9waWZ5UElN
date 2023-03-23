@@ -867,7 +867,7 @@
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "onOptionChange": "{{GetProducts.run()\n.then(() => SearchProducts.run())}}",
+                      "onOptionChange": "{{GetProducts.run()\n}}",
                       "minDynamicHeight": 4
                     },
                     {
