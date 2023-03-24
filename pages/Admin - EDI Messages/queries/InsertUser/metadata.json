@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "GetLoggedInUser",
+    "name": "InsertUser",
     "datasource": {
       "name": "shopify_PIM",
       "pluginId": "postgres-plugin",
@@ -13,12 +13,12 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Admin - Overzicht",
+    "pageId": "Admin - EDI Messages",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "select user_email, session_expiration_date from vrgr_thuysmeubelen.users\nwhere session_id = {{appsmith.store.userSession.session_id}}",
+      "body": "INSERT INTO vrgr_thuysmeubelen.\"users\" (\n\t\"user_email\",\n\t\"user_name\",\n\t\"password\",\n\t\"created_by\")\nVALUES (\n\t{{Input_InsertEmail.inputText}},\n\t{{Input_Insertname.inputText}},\n\tcrypt({{Input_Password.inputText}}, gen_salt('bf')),\n\t'{{appsmith.user.email}}'\n\t);",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -26,7 +26,7 @@
         }
       ]
     },
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -36,14 +36,17 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "appsmith.store.userSession.session_id"
+      "Input_InsertEmail.inputText",
+      "Input_Insertname.inputText",
+      "Input_Password.inputText",
+      "appsmith.user.email"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Admin - Overzicht_GetLoggedInUser",
+  "id": "Admin - EDI Messages_InsertUser",
   "deleted": false,
-  "gitSyncId": "63e35807ad94196f572dd542_63e5944cc3731e7323203ffa"
+  "gitSyncId": "640fdfb58441d608c13ae57f_641e1eed8441d608c13ae781"
 }

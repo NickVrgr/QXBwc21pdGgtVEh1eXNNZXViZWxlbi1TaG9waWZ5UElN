@@ -1,0 +1,3 @@
+SELECT * FROM vrgr_thuysmeubelen.edimessages
+where created_date > CURRENT_TIMESTAMP - INTERVAL '2 days'
+order by id desc;

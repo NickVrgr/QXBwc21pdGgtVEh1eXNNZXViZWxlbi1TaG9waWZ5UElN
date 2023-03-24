@@ -27,6 +27,10 @@
     {
       "id": "Instellingen",
       "isDefault": false
+    },
+    {
+      "id": "Admin - EDI Messages",
+      "isDefault": false
     }
   ],
   "viewMode": false,

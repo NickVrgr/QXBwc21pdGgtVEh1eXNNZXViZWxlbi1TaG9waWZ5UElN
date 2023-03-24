@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "JS_User",
+    "pageId": "Admin - EDI Messages",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Admin - EDI Messages_JS_User",
+  "deleted": false,
+  "gitSyncId": "640fdfb58441d608c13ae57f_641e1eed8441d608c13ae78c"
+}
