@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE \"vrgr_thuysmeubelen\".products\nset shopify_id = {{this.params.shopify_id}},\n    shopify_inv_id = {{this.params.shopify_inv_id}},\n\t\tvariants_inv_ids = variants_inv_ids || '[\"{{this.params.shopify_inv_id}}\"]'::jsonb,\n\t\tvariants_ids = variants_ids || '[{\"variant_id\":\"{{this.params.variant_id}}\", \"productid\" : \"{{this.params.shopify_id}}\"}]'::jsonb\nwhere id = {{this.params.id}}",
+      "body": "UPDATE \"vrgr_thuysmeubelen\".products\nset shopify_id = {{this.params.shopify_id}},\n    shopify_inv_id = {{this.params.shopify_inv_id}},\n\t\tvariants_inv_ids = variants_inv_ids || '[\"{{this.params.shopify_inv_id}}\"]'::jsonb,\n\t\tvariants_ids = variants_ids || '[{\"variant_id\":\"{{this.params.variant_id}}\", \"productid\" : \"{{this.params.shopify_id}}\"}]'::jsonb\nwhere external_id = '{{this.params.id}}'",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

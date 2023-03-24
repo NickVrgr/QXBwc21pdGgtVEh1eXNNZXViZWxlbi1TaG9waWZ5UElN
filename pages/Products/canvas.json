@@ -328,9 +328,6 @@
                         },
                         {
                           "key": "primaryColumns.active.computedValue"
-                        },
-                        {
-                          "key": "primaryColumns.variant_id.computedValue"
                         }
                       ],
                       "leftColumn": 0,
@@ -390,9 +387,8 @@
                         "shopify_id",
                         "shopify_inv_id",
                         "variants_inv_ids",
-                        "variant_id",
-                        "active",
                         "variants_ids",
+                        "active",
                         "customColumn1"
                       ],
                       "dynamicPropertyPathList": [],
@@ -741,25 +737,6 @@
                           "isDerived": false,
                           "label": "active",
                           "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.active))}}",
-                          "cellBackground": ""
-                        },
-                        "variant_id": {
-                          "index": 14,
-                          "width": 150,
-                          "id": "variant_id",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "text",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "variant_id",
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variant_id))}}",
                           "cellBackground": ""
                         }
                       },
@@ -5692,9 +5669,9 @@
               "pluginType": "DB",
               "jsonPathKeys": [
                 " (data_table.pageNo - 1) * data_table.pageSize ",
-                "select_Categories.selectedOptionValue || GetCategories.data[0].value ",
                 " data_table.pageSize ",
-                "data_table.searchText"
+                "data_table.searchText",
+                "select_Categories.selectedOptionValue || GetCategories.data[0].value "
               ],
               "timeoutInMillisecond": 10000
             }
