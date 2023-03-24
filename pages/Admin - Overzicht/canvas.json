@@ -300,7 +300,7 @@
               "resetFormOnClick": false,
               "boxShadow": "none",
               "widgetName": "Button1Copy1CopyCopy1",
-              "onClick": "{{navigateTo('Admin - Gebruikers', {}, 'SAME_WINDOW')}}",
+              "onClick": "{{navigateTo('Admin - EDI Messages', {}, 'SAME_WINDOW')}}",
               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
               "dynamicPropertyPathList": [
                 {
