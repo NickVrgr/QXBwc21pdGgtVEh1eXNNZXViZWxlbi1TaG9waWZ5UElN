@@ -1696,7 +1696,7 @@
                         }
                       },
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "columnUpdatedAt": 1679695657991,
+                      "columnUpdatedAt": 1679696349967,
                       "defaultSelectedRowIndices": [
                         0
                       ],
@@ -1706,9 +1706,9 @@
                         "id",
                         "created_by",
                         "last_modified_date",
-                        "created_date",
                         "message",
-                        "workflow"
+                        "workflow",
+                        "created_date"
                       ],
                       "dynamicPropertyPathList": [],
                       "displayName": "Table",
@@ -1803,7 +1803,7 @@
                           "fontStyle": "",
                           "enableFilter": true,
                           "enableSort": true,
-                          "isVisible": false,
+                          "isVisible": true,
                           "isDisabled": false,
                           "isCellEditable": false,
                           "isEditable": false,
