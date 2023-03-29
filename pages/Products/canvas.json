@@ -6101,9 +6101,9 @@
               "pluginType": "DB",
               "jsonPathKeys": [
                 " (data_table.pageNo - 1) * data_table.pageSize ",
+                "select_Categories.selectedOptionValue || GetCategories.data[0].value ",
                 " data_table.pageSize ",
-                "data_table.searchText",
-                "select_Categories.selectedOptionValue || GetCategories.data[0].value "
+                "data_table.searchText"
               ],
               "timeoutInMillisecond": 10000
             }

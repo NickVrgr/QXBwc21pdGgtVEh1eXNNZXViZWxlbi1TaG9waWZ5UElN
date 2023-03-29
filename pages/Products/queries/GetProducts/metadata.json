@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT details -> 'itemCode' as Itemcode, details -> 'description' as Omschrijving,details ->> 'Product type' as Categorie,   *  \nFROM \"vrgr_thuysmeubelen\".products\nWHERE details ->> 'Product type' ilike '%{{select_Categories.selectedOptionValue || GetCategories.data[0].value }}%' \nand (details ->> 'itemCode' ilike '%{{data_table.searchText}}%' or details ->> 'description' ilike '%{{data_table.searchText}}%' ) \nand details is not null\nLIMIT {{ data_table.pageSize }} OFFSET {{ (data_table.pageNo - 1) * data_table.pageSize }};",
+      "body": "SELECT details -> 'itemCode' as Itemcode, details -> 'description' as Omschrijving,details ->> 'Product type' as Categorie,   *  \nFROM \"vrgr_thuysmeubelen\".products\nWHERE details ->> 'Product type' ilike '%{{select_Categories.selectedOptionValue || GetCategories.data[0].value }}%' \nand (details ->> 'itemCode' ilike '%{{data_table.searchText}}%' or details ->> 'description' ilike '%{{data_table.searchText}}%' ) \nand details is not null\norder by shopify_id desc\nLIMIT {{ data_table.pageSize }} OFFSET {{ (data_table.pageNo - 1) * data_table.pageSize }};",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
