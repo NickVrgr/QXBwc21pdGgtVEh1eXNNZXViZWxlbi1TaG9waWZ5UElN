@@ -1,0 +1,4 @@
+UPDATE "vrgr_thuysmeubelen".products
+set variants_inv_ids =  variants_inv_ids || '["{{this.params.inv_ids}}"]'::jsonb,
+    variants_ids = variants_ids || '[{"variant_id":"{{this.params.variant_id}}", "productid" : "{{this.params.shopify_id}}"}]'::jsonb
+where id = {{Table2.triggeredRow.id}}

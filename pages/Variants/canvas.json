@@ -1,7 +1,7 @@
 {
   "unpublishedPage": {
-    "name": "Products",
-    "slug": "products",
+    "name": "Variants",
+    "slug": "variants",
     "layouts": [
       {
         "viewMode": false,
@@ -235,7 +235,7 @@
                     },
                     {
                       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-                      "multiRowSelection": true,
+                      "multiRowSelection": false,
                       "onSort": "{{GetProducts.run()}}",
                       "isVisibleDownload": false,
                       "iconSVG": "/static/media/icon.db8a9cbd.svg",
@@ -256,6 +256,30 @@
                         },
                         {
                           "key": "boxShadow"
+                        },
+                        {
+                          "key": "derivedColumns.customColumn1.boxShadow"
+                        },
+                        {
+                          "key": "primaryColumns.customColumn1.boxShadow"
+                        },
+                        {
+                          "key": "derivedColumns.customColumn1.borderRadius"
+                        },
+                        {
+                          "key": "primaryColumns.customColumn1.borderRadius"
+                        },
+                        {
+                          "key": "derivedColumns.customColumn1.buttonColor"
+                        },
+                        {
+                          "key": "primaryColumns.customColumn1.buttonColor"
+                        },
+                        {
+                          "key": "primaryColumns.customColumn1.buttonLabel"
+                        },
+                        {
+                          "key": "derivedColumns.customColumn1.buttonLabel"
                         },
                         {
                           "key": "primaryColumns.itemcode.computedValue"
@@ -383,6 +407,7 @@
                         "variants_inv_ids",
                         "variants_ids",
                         "active",
+                        "customColumn1",
                         "customColumn2"
                       ],
                       "dynamicPropertyPathList": [],
@@ -403,10 +428,35 @@
                           "key": "onSort"
                         },
                         {
+                          "key": "primaryColumns.customColumn1.onClick"
+                        },
+                        {
                           "key": "primaryColumns.customColumn2.onClick"
                         }
                       ],
                       "primaryColumns": {
+                        "customColumn1": {
+                          "index": 21,
+                          "width": 150,
+                          "id": "customColumn1",
+                          "columnType": "button",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellVisible": true,
+                          "isDerived": true,
+                          "label": "Details",
+                          "computedValue": "",
+                          "buttonStyle": "rgb(3, 179, 101)",
+                          "labelColor": "#FFFFFF",
+                          "boxShadow": "{{data_table.sanitizedTableData.map((currentRow) => ( 'none'))}}",
+                          "borderRadius": "{{data_table.sanitizedTableData.map((currentRow) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                          "buttonColor": "{{data_table.sanitizedTableData.map((currentRow) => ( appsmith.theme.colors.primaryColor))}}",
+                          "iconName": "",
+                          "buttonLabel": "{{data_table.sanitizedTableData.map((currentRow) => ( 'Bekijken'))}}",
+                          "onClick": "{{showModal('Product_Modal')}}"
+                        },
                         "itemcode": {
                           "index": 0,
                           "width": 150,
@@ -736,6 +786,27 @@
                       },
                       "key": "zba5qel0au",
                       "derivedColumns": {
+                        "customColumn1": {
+                          "index": 21,
+                          "width": 150,
+                          "id": "customColumn1",
+                          "columnType": "button",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellVisible": true,
+                          "isDerived": true,
+                          "label": "Details",
+                          "computedValue": "",
+                          "buttonStyle": "rgb(3, 179, 101)",
+                          "labelColor": "#FFFFFF",
+                          "boxShadow": "{{data_table.sanitizedTableData.map((currentRow) => ( 'none'))}}",
+                          "borderRadius": "{{data_table.sanitizedTableData.map((currentRow) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                          "buttonColor": "{{data_table.sanitizedTableData.map((currentRow) => ( appsmith.theme.colors.primaryColor))}}",
+                          "iconName": "",
+                          "buttonLabel": "{{data_table.sanitizedTableData.map((currentRow) => ( 'Bekijken'))}}"
+                        },
                         "customColumn2": {
                           "index": 18,
                           "width": 150,
@@ -5928,7 +5999,7 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Products_GetCategories",
+              "id": "Variants_GetCategories",
               "name": "GetCategories",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
@@ -5936,29 +6007,25 @@
               "timeoutInMillisecond": 10000
             },
             {
-              "id": "Products_JS_Shopify.getSettings",
+              "id": "Variants_JS_Shopify.getSettings",
               "name": "JS_Shopify.getSettings",
-              "collectionId": "Products_JS_Shopify",
+              "collectionId": "Variants_JS_Shopify",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
-              "jsonPathKeys": [
-                "() => {\n  GetSettings.run();\n}"
-              ],
+              "jsonPathKeys": [],
               "timeoutInMillisecond": 10000
             },
             {
-              "id": "Products_JS_User.checkSessionID",
+              "id": "Variants_JS_User.checkSessionID",
               "name": "JS_User.checkSessionID",
-              "collectionId": "Products_JS_User",
+              "collectionId": "Variants_JS_User",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
-              "jsonPathKeys": [
-                "() => {\n  if (!appsmith.store?.userSession?.session_id && appsmith.mode != \"EDIT\") {\n    navigateTo(\"Authenticatie\", {}, \"SAME_WINDOW\");\n  } else {\n    JS_User.checkUserLogin();\n  }\n}"
-              ],
+              "jsonPathKeys": [],
               "timeoutInMillisecond": 10000
             },
             {
-              "id": "Products_SelectQuery",
+              "id": "Variants_SelectQuery",
               "name": "SelectQuery",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
@@ -5968,15 +6035,15 @@
           ],
           [
             {
-              "id": "Products_GetProducts",
+              "id": "Variants_GetProducts",
               "name": "GetProducts",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
               "jsonPathKeys": [
                 " (data_table.pageNo - 1) * data_table.pageSize ",
+                "select_Categories.selectedOptionValue || GetCategories.data[0].value ",
                 " data_table.pageSize ",
-                "data_table.searchText",
-                "select_Categories.selectedOptionValue || GetCategories.data[0].value "
+                "data_table.searchText"
               ],
               "timeoutInMillisecond": 10000
             }
@@ -5984,7 +6051,7 @@
         ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": "Products",
+        "id": "Variants",
         "deleted": false,
         "policies": [],
         "userPermissions": []
@@ -5992,8 +6059,8 @@
     ],
     "userPermissions": [],
     "policies": [],
-    "isHidden": true
+    "isHidden": false
   },
   "deleted": false,
-  "gitSyncId": "6369241fb68d000318320a55_63692ed7b68d000318320a62"
+  "gitSyncId": "640fe3dceec3ba62f227db26_64545064136016680c431abb"
 }

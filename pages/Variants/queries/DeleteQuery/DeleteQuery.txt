@@ -1,0 +1,2 @@
+DELETE FROM vrgr_thuysmeubelen."products"
+  WHERE "id" = {{data_table.triggeredRow.id}};
