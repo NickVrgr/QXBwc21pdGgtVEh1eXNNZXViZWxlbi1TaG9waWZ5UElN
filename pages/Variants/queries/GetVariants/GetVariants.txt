@@ -1,0 +1,4 @@
+SELECT  variants_ids 
+FROM "vrgr_thuysmeubelen".products
+where id = {{data_table.triggeredRow.id}}
+

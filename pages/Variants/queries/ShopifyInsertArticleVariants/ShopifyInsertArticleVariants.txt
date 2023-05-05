@@ -1,0 +1,7 @@
+{{
+ {
+	  "settings": GetSettings.data[0],
+		"products": data_table.triggeredRow.shopify_id,
+		"variants": Table2.triggeredRow
+ }
+}}
