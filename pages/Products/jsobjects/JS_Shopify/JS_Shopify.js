@@ -9,11 +9,17 @@ export default {
 			UpdateShopifyID.run({shopify_id: product.product.id, shopify_inv_id:product.product.variants[0].inventory_item_id, id:product.product.variants[0].sku, variant_id:product.product.variants[0].id})
 		})
 		})
-  .then(() => showAlert('Product inserted', 'success'))
-	.then(() => GetProducts.run())
-	.then(() => closeModal('Modal_Loading'))
+  .then(() => {
+								showAlert('Product inserted', 'success');
+								closeModal('Modal_Loading');
+								GetProducts.run();
+							})
+	.catch((err) => {
+										showAlert(`${JSON.stringify(err.message)}`,'error');
+										closeModal('Modal_Loading');
+									})
 	
-  // .catch((error) => {	showAlert(`${JSON.stringify(error.message)}`,'error');
+  // .catch((error) => {	;
 											// InsertErrorlog.run() })												//write code here
 	},
 	Create_Product_Variants: () => {
