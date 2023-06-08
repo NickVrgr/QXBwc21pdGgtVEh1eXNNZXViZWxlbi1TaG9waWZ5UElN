@@ -12,9 +12,9 @@ export default {
 			})
 		})
 			.then(() => {
+			GetProducts.run();
 			showAlert('Product inserted', 'success');
 			closeModal('Modal_Loading');
-			GetProducts.run();
 		})
 			.catch((err) => {
 			showAlert(`${JSON.stringify(err.message)}`,'error');
