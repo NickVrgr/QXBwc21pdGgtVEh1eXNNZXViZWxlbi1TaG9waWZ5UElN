@@ -53,19 +53,6 @@
       "showSignIn": true
     }
   },
-  "publishedApplicationDetail": {
-    "navigationSetting": {
-      "showNavbar": false,
-      "orientation": "top",
-      "navStyle": "stacked",
-      "position": "static",
-      "itemStyle": "text",
-      "colorStyle": "light",
-      "logoAssetId": "",
-      "logoConfiguration": "logoAndApplicationTitle",
-      "showSignIn": true
-    }
-  },
   "color": "#F3F1C7",
   "icon": "laptop",
   "unpublishedCustomJSLibs": [],

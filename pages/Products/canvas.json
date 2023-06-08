@@ -322,6 +322,9 @@
                         },
                         {
                           "key": "derivedColumns.customColumn2.buttonLabel"
+                        },
+                        {
+                          "key": "primaryColumns.variant_id.computedValue"
                         }
                       ],
                       "leftColumn": 0,
@@ -381,8 +384,9 @@
                         "shopify_id",
                         "shopify_inv_id",
                         "variants_inv_ids",
-                        "variants_ids",
+                        "variant_id",
                         "active",
+                        "variants_ids",
                         "customColumn2"
                       ],
                       "dynamicPropertyPathList": [],
@@ -732,6 +736,25 @@
                           "iconName": "",
                           "buttonLabel": "{{data_table.sanitizedTableData.map((currentRow) => ( 'Artikel resetten'))}}",
                           "onClick": "{{showModal('Modal_ResetArticle')}}"
+                        },
+                        "variant_id": {
+                          "index": 14,
+                          "width": 150,
+                          "id": "variant_id",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "variant_id",
+                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.variant_id))}}",
+                          "cellBackground": ""
                         }
                       },
                       "key": "zba5qel0au",
